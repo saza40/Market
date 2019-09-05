@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="gigaSpaceParallelQueueConfiguration" class="com.so4it.gs.queue.GigaSpaceParallelQueueConfiguration">
+        <constructor-arg name="dynamicConfiguration" ref="dynamicConfiguration"/>
+    </bean>
+
+
+    <bean id="parallelQueueFactory" class="se.lexicon.market.component.service.ParallelQueueFactory">
+        <constructor-arg name="gigaSpaceParallelQueueConfiguration" ref="gigaSpaceParallelQueueConfiguration"/>
+        <constructor-arg name="mBeanRegistry" ref="mBeanRegistry"/>
+        <constructor-arg name="gigaSpace" ref="marketGigaSpace"/>
+        <constructor-arg name="transactionManager" ref="transactionManager"/>
+    </bean>
+
+
+
+    <bean id ="orderParallelQueue" class="com.so4it.gs.queue.GigaSpaceParallelQueue" factory-bean="parallelQueueFactory"
+          factory-method="createTaskExecutorParallelQueue" init-method="initialize" destroy-method="close">
+        <constructor-arg name="workflowParallelQueueConsumer" ref="marketOrderParallelQueueConsumer"/>
+    </bean>
+
+
+
+    <bean id="marketOrderParallelQueueConsumer" class="se.lexicon.market.component.service.MarketOrderParallelQueueConsumer">
+        <constructor-arg name="marketOrderDao" ref="marketOrderDao"/>
+    </bean>
+
+</beans>

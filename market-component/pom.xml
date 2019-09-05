@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.lexicon</groupId>
+        <artifactId>market</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>market-component</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>market-component-client</module>
+        <module>market-component-dao</module>
+        <module>market-component-dao-impl</module>
+        <module>market-component-domain</module>
+        <module>market-component-entity</module>
+        <module>market-component-mapper</module>
+        <module>market-component-mirror</module>
+        <module>market-component-pu</module>
+        <module>market-component-pu-mirror</module>
+        <module>market-component-service</module>
+        <module>market-component-service-impl</module>
+        <module>market-component-test</module>
+
+    </modules>
+
+
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!--
+                Project
+            -->
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-dao</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-dao-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-entity</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-mapper</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-service-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-mirror</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-pu</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-pu-mirror</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-test-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.so4it.sugar</groupId>
+                <artifactId>${mongodb.dependency.management.artifact.id}</artifactId>
+                <version>${platform.dependency.management.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>${platform.provided.dependencies.artifact.id}</artifactId>
+            <version>${platform.provided.dependencies.version}</version>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>platform-required-logging-dependencies</artifactId>
+            <version>${platform.dependency.management.version}</version>
+            <scope>compile</scope>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+
+
+</project>
+

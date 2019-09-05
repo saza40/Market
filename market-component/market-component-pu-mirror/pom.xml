@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.lexicon</groupId>
+        <artifactId>market-component</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>market-component-pu-mirror</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-mirror</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>configuration-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>gigaspaces-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>mongodb-datasource</artifactId>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>copy-dependencies</id>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                            <configuration>
+                                <includeScope>runtime</includeScope>
+                                <outputDirectory>${project.build.outputDirectory}/lib</outputDirectory>
+                                <excludeArtifactIds>${maven.jar.plugin.exclude}</excludeArtifactIds>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        
+        <plugins>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+            
+</project>
+

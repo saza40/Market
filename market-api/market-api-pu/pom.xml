@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.lexicon</groupId>
+        <artifactId>market-api</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>market-api-pu</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!--
+            Project
+        -->
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-api-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-service</artifactId>
+        </dependency>
+
+        <!--
+            Sugar
+        -->
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>api-configuration</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>registry-api-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>metric-springframework</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>configuration-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>gigaspaces-util</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>${platform.required.api.runner.dependencies.artifact.id}</artifactId>
+            <version>${platform.dependency.management.version}</version>
+            <scope>provided</scope>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>copy-dependencies</id>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                            <configuration>
+                                <includeScope>runtime</includeScope>
+                                <outputDirectory>${project.build.outputDirectory}/lib</outputDirectory>
+                                <excludeArtifactIds>${maven.jar.plugin.exclude}</excludeArtifactIds>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+

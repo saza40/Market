@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>market-component-test</artifactId>
+        <groupId>com.lexicon</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>market-component-test-integration</artifactId>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-test-common</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-dao</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-dao-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-entity</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-mapper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-service-impl</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>configuration-test-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>gigaspaces-test-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>registry-test-common</artifactId>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>test-category</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>test-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>test-builder-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>test-builder-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>test-builder-entity</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>test-gigaspaces</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>test-springframework</artifactId>
+        </dependency>
+
+    </dependencies>
+</project>

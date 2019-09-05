@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.lexicon</groupId>
+        <artifactId>market-api</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>market-api-test</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>market-api-test-common</module>
+        <module>market-api-test-integration</module>
+        <module>market-api-test-unit</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-api-test-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!--
+                Project component
+            -->
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-dao-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-service-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lexicon</groupId>
+                <artifactId>market-component-test-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
+            <!--
+            -->
+            <dependency>
+                <groupId>com.so4it.sugar</groupId>
+                <artifactId>api-test-common</artifactId>
+                <version>${sugar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.so4it.sugar</groupId>
+                <artifactId>configuration-test-common</artifactId>
+                <version>${sugar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.so4it.sugar</groupId>
+                <artifactId>gigaspaces-test-common</artifactId>
+                <version>${sugar.gigaspaces.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.so4it.sugar</groupId>
+                <artifactId>registry-test-common</artifactId>
+                <version>${sugar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.so4it.sugar</groupId>
+                <artifactId>test-builder-common</artifactId>
+                <version>${sugar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.so4it.sugar</groupId>
+                <artifactId>test-builder-domain</artifactId>
+                <version>${sugar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.so4it.sugar</groupId>
+                <artifactId>test-gigaspaces</artifactId>
+                <version>${sugar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.so4it.sugar</groupId>
+                <artifactId>test-springframework</artifactId>
+                <version>${sugar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.so4it.sugar</groupId>
+                <artifactId>test-category</artifactId>
+                <version>${sugar.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>test-common</artifactId>
+            <version>${sugar.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
+

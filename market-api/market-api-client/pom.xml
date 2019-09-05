@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>market-api</artifactId>
+        <groupId>com.lexicon</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>market-api-client</artifactId>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-api-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-api-mapper</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-domain</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>api-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>fault-tolerance-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.so4it.sugar</groupId>
+            <artifactId>metric-springframework</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.lexicon</groupId>
+            <artifactId>market-component-domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>
